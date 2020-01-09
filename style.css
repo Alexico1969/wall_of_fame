@@ -1,0 +1,45 @@
+body{
+    font-family: 'Passion One', cursive;
+    background-image: url('Family_bg.jpg');
+    background-position: center;
+}
+
+h1{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    font-family: 'Bubblegum Sans', cursive;
+    
+}
+
+input{
+    padding-left: 10px;
+}
+
+.box{
+    border: rgba(255, 255, 224) solid 3px;
+    border-radius : 15px;
+    width: 800px;
+    margin-left : auto;
+    margin-right : auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 15px 5px 15px;
+}
+
+.top-box{
+    background-color: #f1b1b186;
+}
+
+.bottom-box{
+    background-color: rgba(255, 255, 224, 0.671);
+}
+
+.space_1{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.strike{
+    text-decoration: line-through;
+}
