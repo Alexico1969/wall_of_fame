@@ -28,9 +28,8 @@ function gotData(data){
         var k = keys[i];
         var todo = todos[k].item;
         var done = todos[k].done;
-        console.log(todo, ": " , done , " key : " , k);
         var li = document.createElement('li');
-        li.innerHTML = '<button id="' + k + '" class="btn" onclick="update(this.id)">' + todo + '</button>';
+        li.innerHTML = '<button id="' + k + '" class="btn" onmousedown="update(event,this.id)">' + todo + '</button>';
         if (done == 'true'){
             li.classList.add('strike');
             li.innerHTML = todo;
@@ -47,6 +46,8 @@ function errData(err){
 
 //Listen for form submit
 document.getElementById('todo_form').addEventListener('submit', submitform);
+//Listen for delete pressed
+document.getElementById('delete').addEventListener('submit', deldone);
 
 
 //submit form
@@ -81,8 +82,18 @@ function saveTodo(item){
 
 //delete data
 
-function update(id){
-    console.log("deleting: ", id);
+function update(event,id){
     let userRef = firebase.database().ref('todolists/' + id);
     userRef.update({'done':'true'});
+    
+}
+
+function deldone(){
+    let userRef = firebase.database().ref('todolists');
+    userRef.orderByChild("done").equalTo("true").on("child_added",
+    function(snapshot){
+        userRef.child(snapshot.key).remove();
+    })
+
+
 }
