@@ -1,0 +1,20 @@
+body{
+    font-family: 'Passion One', cursive;
+    background-image: url('');
+    background-position: center;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    font-family: 'Bubblegum Sans', cursive;
+    
+}
+
+/* Classes */
+
+.center{
+    margin: auto;
+}
